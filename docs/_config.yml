@@ -31,6 +31,8 @@ theme: minima
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
+# Tema
+tiles-source: posts
 
 # Exclude from processing.
 # The following items will not be processed, by default.
