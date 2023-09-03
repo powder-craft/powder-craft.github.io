@@ -10,11 +10,11 @@ image-caption: Dall-e 2 image, generated after requesting a seaotter with a ruby
 If you have the ability, you should have a blog for yourself. Maybe you are not going to
 use it everyday, but you will sure learn something new in doing it.<br>
 
-There are several different ways to create a blog, some are better (in many ways) than other,
+There are several different ways to create a blog, some are better (in many ways) than others,
 but in the end the result is the same, so you should choose a way of deploying it
 that you find interesting and doable for what you have (especially money 💶).<br>
 
-I choose to use GitHub Pages with Jekyll, because it is free, already connected to a repository,
+I choose GitHub Pages with Jekyll, because it is free, already connected to a repository,
 so the deployment is easier, and I thougth Jekyll was not so difficult and I found it interesting.
 
 ## Setting up GitHub pages
@@ -27,7 +27,7 @@ Still, I typed in the full address, because I like guides and I like to follow t
 get lost in the process.
 
 ## Setting up Jekyll
-I do not like all the work behind a good looking, responsibe web page. I do not like arguing with CSS because I am not
+I do not like all the work behind a good looking, responsive web page. I do not like arguing with CSS because I am not
 able to center divs. So I gave Jekyll a go, since it is so well integrated with GitHub Pages.<br>
 
 It is indeed so easy to just write a markdown file and it automagically gets transformed in a beatiful (and responsive) web page.<br>
@@ -38,7 +38,7 @@ and this added a whole new level of difficulty. Here are the main guides that I 
 - [GitHub pages docs](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)
 - [Jekyll docs for Windows](https://jekyllrb.com/docs/installation/windows/)
 
-So, the first error that I made was considering WSL 2 as "pure" Linux, so I went straight to the Linux installation
+So, the first error I made was considering WSL 2 as "pure" Linux, so I went straight to the Linux installation
 page and my plan was incredibly <s>cunning</s> stupid.<br>
 
 I installed ruby, since Jekyll is written in ruby, but I had an error that went like this:
@@ -62,7 +62,7 @@ You should use the [last ruby version that brightbox has to offer](https://www.b
 
 But beware if you have different version of ruby or you had one version of ruby installed and you think you
 uninstalled it "completely".
-I had the 2.5 version (as indicated as I am writing), and I tried to removed it with
+I had the 2.5 version (since I followed the guide), and I tried to removed it with
 
     sudo apt-get remove ruby2.5
 
@@ -74,7 +74,15 @@ and you have to remove manually ALL the libraries and gems. You can find them wi
 
     find ruby
 
-After you removed everything (and reverted any change to the ./bashrc file, if you did something to it), you can redo a clean installation of ruby. After changing the version, everything
+After you removed everything (and reverted any change to the ./bashrc file, if you did something to it), you can redo a clean installation of ruby.<br>
+
+⚠️ ATTENTION! When you use the apt purge command, READ CAREFULLY what the system is going to remove, since it changes the command to
+
+    sudo apt-get purge ruby*
+
+and it can remove something really important for your system! ⚠️<br>
+
+After changing the version, everything
 was running smoothly. An afternoon was lost, but a blog was created.<br>
 
 I tried changing the theme of my GitHub page with one that was supported natively,
@@ -98,7 +106,7 @@ This requirements are:
 
 They can have tags or categories, that are similar, but categories have a strong relationship with the post path.<br>
 
-The front matter is between three dashes, over and under, and it has the YAML syntax. You can only add ASCII chars in there. You have to define the layout of the page (that has to be defined in the _layout directory) and the title.
+The front matter is between three dashes, over and under, and it has the YAML syntax. You can only add ASCII chars in there. You have to define the reference layout of the page (that has to have the corresponding .html file in the _layout directory, used to render the page) and the title.
 You can also define other variables that you can call in the corrisponding HTML file.<br>
 
 The _config.yml file has to be correctly defined and if you follow the GitHub guide, without subdirectories, then you do not need to change the URL and baseurl variable.
@@ -106,7 +114,7 @@ In this file you can also define other variables and some variables are required
 
     tiles-source: posts
 
-This was a very intresting start of a project I hope I will use forever.<br>
+This was a very intresting start of a project I hope I will use it forever.<br>
 
 Thank you for reading, bye for now 🚀<br>
 
